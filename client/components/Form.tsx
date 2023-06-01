@@ -4,7 +4,7 @@ function Form() {
   const [inputOne, setInputOne] = useState('Enter your name')
   const [inputTwo, setInputTwo] = useState('Enter your crush')
   let [result, setResult] = useState('')
-  let [percentage, setPercentage] = useState(0)
+  const [percentage, setPercentage] = useState(0)
 
   const handleInputOne = (event: ChangeEvent<HTMLInputElement>) => {
     setInputOne(event.target.value)
@@ -35,34 +35,45 @@ function Form() {
     }
   }
 
+  const handleReset = () => {
+    setInputOne('Enter your name')
+    setInputTwo('Enter your crush')
+    setResult('')
+    setPercentage(0)
+  }
+
   return (
     <>
       <div>
         {result === '' ? <h1>enter names below</h1> : <h1>{result}</h1>}
       </div>
 
-      <form className="" onSubmit={handleClick}>
-        <label htmlFor="name-one"></label>
-        <input
-          type="text"
-          name="inputOne"
-          value={inputOne}
-          onChange={handleInputOne}
-        />
+      <div className="form-wrapper">
+        <form className="loveForm" onSubmit={handleClick}>
+          <div className="inputs">
+            <label htmlFor="name-one"></label>
+            <input
+              type="text"
+              name="inputOne"
+              value={inputOne}
+              onChange={handleInputOne}
+            />
 
-        <div>{percentage === 0 ? <h1></h1> : <h1>{percentage}</h1>}</div>
+            <div>{percentage === 0 ? <h1></h1> : <h1>{percentage}</h1>}</div>
 
-        <label htmlFor="name-two"></label>
-        <input
-          type="text"
-          name="inputTwo"
-          value={inputTwo}
-          onChange={handleInputTwo}
-        />
-        <button>Calculate</button>
-      </form>
+            <label htmlFor="name-two"></label>
+            <input
+              type="text"
+              name="inputTwo"
+              value={inputTwo}
+              onChange={handleInputTwo}
+            />
+          </div>
+          <button className="calculateButton">Calculate</button>
+        </form>
+      </div>
 
-      <button>Reset</button>
+      <button onClick={handleReset}>Reset</button>
     </>
   )
 }
