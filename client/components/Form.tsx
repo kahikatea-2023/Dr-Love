@@ -13,7 +13,7 @@ function Form() {
     setInputTwo(event.target.value)
   }
 
-  function handleClick() {}
+  // function handleClick() {}
 
   return (
     <>
