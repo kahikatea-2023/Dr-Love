@@ -35,6 +35,13 @@ function Form() {
     }
   }
 
+  const handleReset = () => {
+    setInputOne('Enter your name')
+    setInputTwo('Enter your crush')
+    setResult('')
+    setPercentage(0)
+  }
+
   return (
     <>
       <div>
@@ -62,7 +69,7 @@ function Form() {
         <button>Calculate</button>
       </form>
 
-      <button>Reset</button>
+      <button onClick={handleReset}>Reset</button>
     </>
   )
 }
