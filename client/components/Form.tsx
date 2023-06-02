@@ -1,10 +1,18 @@
-import React, { ChangeEvent, useState, FormEvent } from 'react'
+import { ChangeEvent, useState, FormEvent } from 'react'
+
+import friendsSound from '../../public/sounds/sad.mp3'
+import okaySound from '../../public/sounds/alright.mp3'
+import greatSound from '../../public/sounds/barry-white.mp3'
+import soulMateSound from '../../public/sounds/wedding-bells.mp3'
 
 function Form() {
   const [inputOne, setInputOne] = useState('Enter your name')
   const [inputTwo, setInputTwo] = useState('Enter your crush')
-  let [result, setResult] = useState('')
+  const [result, setResult] = useState('')
   const [percentage, setPercentage] = useState(0)
+
+  const [sound, setSound] = useState('')
+  const [playSound, setPlaySound] = useState(false)
 
   const handleInputOne = (event: ChangeEvent<HTMLInputElement>) => {
     setInputOne(event.target.value)
@@ -21,18 +29,19 @@ function Form() {
     setPercentage(randomNum)
 
     if (randomNum >= 0 && randomNum <= 49) {
-      setResult(
-        (result = `${inputOne} and ${inputTwo} are better off as friends...`)
-      )
+      setResult(`${inputOne} and ${inputTwo} are better off as friends...`)
+      setSound(friendsSound)
     } else if (randomNum >= 50 && randomNum <= 69) {
-      setResult(
-        (result = `${inputOne} and ${inputTwo} are an okay match... I guess...`)
-      )
+      setResult(`${inputOne} and ${inputTwo} are an okay match... I guess...`)
+      setSound(okaySound)
     } else if (randomNum >= 70 && randomNum <= 89) {
-      setResult((result = `${inputOne} and ${inputTwo} are a great match!`))
+      setResult(`${inputOne} and ${inputTwo} are a great match!`)
+      setSound(greatSound)
     } else if (randomNum >= 90 && randomNum <= 100) {
-      setResult((result = `${inputOne} and ${inputTwo} are soulmates!!!`))
+      setResult(`${inputOne} and ${inputTwo} are soulmates!!!`)
+      setSound(soulMateSound)
     }
+    setPlaySound(true)
   }
 
   const handleReset = () => {
@@ -40,6 +49,8 @@ function Form() {
     setInputTwo('Enter your crush')
     setResult('')
     setPercentage(0)
+    setPlaySound(false)
+    setSound('')
   }
 
   return (
@@ -72,11 +83,16 @@ function Form() {
             />
           </div>
           <button className="calculateButton">Calculate</button>
-          <button className="calculateButton" onClick={handleReset}>
-            Reset
-          </button>
         </form>
+        <button className="calculateButton" onClick={handleReset}>
+          Reset
+        </button>
       </div>
+      {playSound && (
+        <audio controls autoPlay>
+          <source src={sound} type="audio/mpeg" />
+        </audio>
+      )}
     </>
   )
 }
