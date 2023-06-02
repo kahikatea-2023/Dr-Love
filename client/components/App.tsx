@@ -2,11 +2,10 @@ import Form from './Form'
 
 function App() {
   return (
-    <div>
+    <div className="app-container">
       <h1>Love Calculator</h1>
-      
+
       <Form />
-      
     </div>
   )
 }
