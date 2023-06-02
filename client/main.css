@@ -17,6 +17,25 @@ body {
   right: 1%;
 top: 17%;
 z-index: 1;
+animation: cherub_animation 3000ms infinite ease-in-out;
+}
+
+@keyframes cherub_animation {
+  0% {
+    transform: translate(0, 0px);
+  }
+  25% {
+    transform: translate(5px, 15px);
+  }
+  50% {
+    transform: translate(10px, 20px);
+  }
+  75% {
+    transform: translate(15px, 5px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
 }
 
 .cloud-1 {
@@ -25,7 +44,22 @@ z-index: 1;
   height: 359px;
   right: -6%;
 top: -1%;
+animation: cssAnimation_0 2000ms infinite ease-out;
 }
+
+@keyframes cssAnimation_0 {
+  0% {
+    transform: translate(0, 0px);
+  }
+  50% {
+    transform: translate(20px, 0px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+
 
 .cloud-2 {
   position: absolute;
@@ -33,6 +67,19 @@ top: -1%;
   height: 292px;
   left: 1%;
 top: 21%;
+animation: cssAnimation_2 1500ms infinite ease-out;
+}
+
+@keyframes cssAnimation_2 {
+  0% {
+    transform: translate(0, 0px);
+  }
+  50% {
+    transform: translate(-20px, 0px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
 }
 
 .cloud-3 {
@@ -42,6 +89,19 @@ top: 21%;
   left: 20%;
 top: 54%;
 z-index: -1;
+animation: cssAnimation_3 1750ms infinite ease-out;
+}
+
+@keyframes cssAnimation_3 {
+  0% {
+    transform: translate(0, 0px);
+  }
+  50% {
+    transform: translate(-20px, 0px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
 }
 
 .cloud-4 {
@@ -50,7 +110,21 @@ z-index: -1;
   height: 226px;
   right: 10%;
 top: 69%;
+animation: cssAnimation_4 2250ms infinite ease-out;
 }
+
+@keyframes cssAnimation_4 {
+  0% {
+    transform: translate(0, 0px);
+  }
+  50% {
+    transform: translate(-20px, 0px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
 
 #app {
   /* display: flex;
@@ -72,6 +146,7 @@ h1 {
   color: white;
   margin: 0;
   z-index: 1;
+  text-shadow: #ed1f2a 0 0 15px;
 }
 
 
@@ -98,6 +173,19 @@ justify-content: center;
   background-size: 100%;
   background-repeat: no-repeat;
   margin-bottom: 0;
+  animation: heart_anim 2250ms infinite ease-out;
+}
+
+@keyframes heart_anim {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .heart::before {
