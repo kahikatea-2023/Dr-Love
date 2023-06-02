@@ -59,7 +59,9 @@ function Form() {
               onChange={handleInputOne}
             />
 
-            <div>{percentage === 0 ? <h1></h1> : <h1>{percentage}</h1>}</div>
+            <div className="heart">
+              {percentage === 0 ? <h1></h1> : <h1>{percentage}%</h1>}
+            </div>
 
             <label htmlFor="name-two"></label>
             <input
