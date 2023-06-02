@@ -1,11 +1,55 @@
 body {
   display: flex;
+  position: relative;
   justify-content: center;
   height: 100vh;
   background-color: #fabfc0;
   color: #0a1520;
   font-family: 'Times New Roman', Times, serif, serif;
   font-style: italic;
+  overflow: hidden;
+}
+
+.cherub {
+  position: absolute;
+  width: 353px;
+  height: 353px;
+  right: 1%;
+top: 17%;
+z-index: 1;
+}
+
+.cloud-1 {
+  position: absolute;
+  width: 404px;
+  height: 359px;
+  right: -6%;
+top: -1%;
+}
+
+.cloud-2 {
+  position: absolute;
+  width: 329px;
+  height: 292px;
+  left: 1%;
+top: 21%;
+}
+
+.cloud-3 {
+  position: absolute;
+  width: 286px;
+  height: 264px;
+  left: 20%;
+top: 54%;
+z-index: -1;
+}
+
+.cloud-4 {
+  position: absolute;
+  width: 254px;
+  height: 226px;
+  right: 10%;
+top: 69%;
 }
 
 #app {
@@ -29,7 +73,10 @@ h1 {
   margin: 0
 }
 
+
+
 .form-wrapper {
+  z-index: 1;
   flex: auto;
   margin: 0 auto; 
 }
@@ -47,11 +94,38 @@ justify-content: center;
   height: 356px;
   background-image: url(/images/heart.png);
   background-size: 100%;
+  background-repeat: no-repeat;
 }
 
-.heart h1 {
+.heart::before {
+  content: "";
+  width: 100%;
+  height: 0;
+  padding-bottom: 96.476%;
+}
+
+.heart h2 {
+  font-family: 'Times New Roman', Times, serif, serif;
+  font-style: italic;
+  color: #fff;
+  font-size: 72px;
+  font-weight: normal;
   margin: 0;
-  align-self: center;
+  position: absolute;
+  top: 50%;
+}
+
+.dynamic-text {
+  z-index: 1;
+}
+
+.dynamic-text h2 {
+  font-family: 'Times New Roman', Times, serif, serif;
+  font-style: italic;
+  text-align: center;
+  font-size: 36px;
+  margin: 10px 0 40px;
+  color: #ed1f2a;
 }
 
 .calculateButton {
@@ -64,14 +138,16 @@ justify-content: center;
   border-radius:30px ;
   font-family: 'Times New Roman', Times, serif, serif;
   font-style: italic;
+  font-weight: bold;
   font-size: 36px;
-  color: #white;
+  color: #fff;
   background-color:#ed1f2a ;
   text-align: center;
 
 }
 
 .inputs input {
+  width: 25%;
   height: auto;
   margin: 0px 50px;
   padding: 10px;
@@ -89,6 +165,7 @@ justify-content: center;
 }
 
 .inputs {
+  z-index: 1;
   display: flex;
   justify-content: space-between;
   align-items: center;
