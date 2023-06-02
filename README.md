@@ -38,13 +38,15 @@
         What was your wellbing plan and did you use it?
         breaks
         lollies
-    Stretch:
-        What were your stretch goals?
+ 
+ Stretch:
+       What were your stretch goals?
           Audio
           Animations
         Did you get to any of those stretch goals?
           Yes all complete
-    Challenges:
+   
+Challenges:
         What challenges did you face?
           Reset Button
           Audio challenge
@@ -52,7 +54,8 @@
           Sheer Willpower
           having another pair of eyes to look through code
           Honourable mention ChatGPT
-    Learnings:
+   
+Learnings:
         What did you learn? (both tech and human skilss)
           More about CSS
             how to bring page to life with animation
