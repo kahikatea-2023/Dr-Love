@@ -44,8 +44,8 @@ function Form() {
 
   return (
     <>
-      <div>
-        {result === '' ? <h1>enter names below</h1> : <h1>{result}</h1>}
+      <div className="dynamic-text">
+        {result === '' ? <h2>Enter names below</h2> : <h2>{result}</h2>}
       </div>
 
       <div className="form-wrapper">
@@ -60,7 +60,7 @@ function Form() {
             />
 
             <div className="heart">
-              {percentage === 0 ? <h1></h1> : <h1>{percentage}%</h1>}
+              {percentage === 0 ? <h2></h2> : <h2>{percentage}%</h2>}
             </div>
 
             <label htmlFor="name-two"></label>
@@ -72,10 +72,11 @@ function Form() {
             />
           </div>
           <button className="calculateButton">Calculate</button>
+          <button className="calculateButton" onClick={handleReset}>
+            Reset
+          </button>
         </form>
       </div>
-
-      <button onClick={handleReset}>Reset</button>
     </>
   )
 }
